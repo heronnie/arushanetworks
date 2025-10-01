@@ -21,7 +21,6 @@ export default function Products() {
         </svg>
       ),
       gradient: 'from-blue-500 to-cyan-500',
-      image: '/products/cctv.webp'
     },
     {
       id: 2,
@@ -34,7 +33,6 @@ export default function Products() {
         </svg>
       ),
       gradient: 'from-purple-500 to-pink-500',
-      image: '/products/auto-gate.webp'
     },
     {
       id: 3,
@@ -47,7 +45,7 @@ export default function Products() {
         </svg>
       ),
       gradient: 'from-green-500 to-emerald-500',
-      image: '/products/anviz.webp'
+
     },
     {
       id: 4,
@@ -60,7 +58,7 @@ export default function Products() {
         </svg>
       ),
       gradient: 'from-orange-500 to-red-500',
-      image: '/products/l009in.webp'
+
     },
     {
       id: 5,
@@ -73,7 +71,7 @@ export default function Products() {
         </svg>
       ),
       gradient: 'from-indigo-500 to-purple-500',
-      image: '/products/l009rm.webp'
+
     },
     {
       id: 6,
@@ -86,7 +84,7 @@ export default function Products() {
         </svg>
       ),
       gradient: 'from-yellow-500 to-orange-500',
-      image: '/products/ptz-camera.webp'
+
     }
   ];
 
@@ -129,12 +127,6 @@ const handleWhatsAppClick = (productTitle: string) => {
               
               {/* Card Content */}
               <div className="p-6 sm:p-8">
-                {/* Product Image */}
-                {product.image && (
-                  <div className="w-full h-48 relative mb-4 rounded-lg overflow-hidden bg-gray-50">
-                    <Image src={product.image} alt={product.title} fill className="object-cover" />
-                  </div>
-                )}
 
                 {/* Icon */}
                 <div className={`w-16 h-16 bg-gradient-to-r ${product.gradient} rounded-xl flex items-center justify-center text-white mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg`}>

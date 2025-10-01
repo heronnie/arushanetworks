@@ -52,7 +52,7 @@ export default function Navbar() {
             
             {/* CTA Button */}
             <Link
-              href="/contact"
+              href="/pages/contact"
               className="ml-4 px-6 py-3 text-yellow-400 bg-blue900 font-bold uppercase hover:scale-105 transition-all duration-300"
             >
               Get Started
@@ -121,7 +121,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/pages/contact"
             className="block px-4 py-3 mt-4 uppercase text-yellow-400 text-center "
             onClick={() => setIsOpen(false)}
           >

@@ -15,8 +15,22 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you! We’ll get back to you soon.");
+
+    // Prepare WhatsApp message (use international number without + or spaces)
+    const whatsappNumber = '255758100137'; // replace with your number if different
+    const message = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const encoded = encodeURIComponent(message);
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encoded}`;
+    const apiUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encoded}`;
+
+    // Open WhatsApp in a new tab/window
+    try {
+      window.open(waUrl, '_blank');
+    } catch (err) {
+      window.open(apiUrl, '_blank');
+    }
+
+    // Optionally clear the form after opening WhatsApp
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -82,7 +96,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full mt-1 p-3 text-black border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 ></textarea>
               </div>

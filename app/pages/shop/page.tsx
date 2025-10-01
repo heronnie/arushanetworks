@@ -117,15 +117,14 @@ export default function Shop() {
               className="bg-blue-800 bg-opacity-50 backdrop-blur-sm rounded-xl overflow-hidden border border-blue-700 hover:border-yellow-400 transition-all duration-300"
             >
               <div className="p-6">
-                <div className="aspect-w-16 aspect-h-9 relative bg-blue-900">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  
-                  className="object-cover"
-                />
-              </div>
+                <div className="w-full h-48 relative mb-4 rounded-lg overflow-hidden bg-blue-900">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
                 <p className="text-blue-100 mb-4">{product.description}</p>
                 <p className="text-yellow-400 font-semibold mb-4">{product.price}</p>
