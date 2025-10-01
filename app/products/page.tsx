@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Products() {
   const [, setHoveredProduct] = useState<number | null>(null);
@@ -19,7 +20,8 @@ export default function Products() {
           <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/>
         </svg>
       ),
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 to-cyan-500',
+      image: '/products/cctv.webp'
     },
     {
       id: 2,
@@ -31,7 +33,8 @@ export default function Products() {
           <path d="M19 19V5c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v14H3v2h18v-2h-2zM7 5h10v14H7V5zm2 2h2v2H9V7zm0 4h2v2H9v-2zm0 4h2v2H9v-2z"/>
         </svg>
       ),
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 to-pink-500',
+      image: '/products/auto-gate.webp'
     },
     {
       id: 3,
@@ -43,7 +46,8 @@ export default function Products() {
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
         </svg>
       ),
-      gradient: 'from-green-500 to-emerald-500'
+      gradient: 'from-green-500 to-emerald-500',
+      image: '/products/anviz.webp'
     },
     {
       id: 4,
@@ -55,7 +59,8 @@ export default function Products() {
           <path d="M7.77 6.76L6.23 5.48.82 12l5.41 6.52 1.54-1.28L3.42 12l4.35-5.24zM7 13h2v-2H7v2zm10-2h-2v2h2v-2zm-6 2h2v-2h-2v2zm6.77-7.52l-1.54 1.28L20.58 12l-4.35 5.24 1.54 1.28L23.18 12l-5.41-6.52z"/>
         </svg>
       ),
-      gradient: 'from-orange-500 to-red-500'
+      gradient: 'from-orange-500 to-red-500',
+      image: '/products/l009in.webp'
     },
     {
       id: 5,
@@ -67,7 +72,8 @@ export default function Products() {
           <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
         </svg>
       ),
-      gradient: 'from-indigo-500 to-purple-500'
+      gradient: 'from-indigo-500 to-purple-500',
+      image: '/products/l009rm.webp'
     },
     {
       id: 6,
@@ -79,7 +85,8 @@ export default function Products() {
           <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
         </svg>
       ),
-      gradient: 'from-yellow-500 to-orange-500'
+      gradient: 'from-yellow-500 to-orange-500',
+      image: '/products/ptz-camera.webp'
     }
   ];
 
@@ -122,6 +129,13 @@ const handleWhatsAppClick = (productTitle: string) => {
               
               {/* Card Content */}
               <div className="p-6 sm:p-8">
+                {/* Product Image */}
+                {product.image && (
+                  <div className="w-full h-48 relative mb-4 rounded-lg overflow-hidden bg-gray-50">
+                    <Image src={product.image} alt={product.title} fill className="object-cover" />
+                  </div>
+                )}
+
                 {/* Icon */}
                 <div className={`w-16 h-16 bg-gradient-to-r ${product.gradient} rounded-xl flex items-center justify-center text-white mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {product.icon}
