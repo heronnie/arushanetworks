@@ -80,7 +80,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <Link
-                href="/contact"
+                href="/pages/contact"
                 className="group relative px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 font-bold rounded-xl shadow-2xl hover:shadow-yellow-500/50 transform hover:scale-105 transition-all duration-300 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center space-x-2">
@@ -92,7 +92,7 @@ export default function Hero() {
               </Link>
               
               <Link
-                href="/about"
+                href="/pages/aboutus"
                 className="px-8 py-4 bg-blue-800 bg-opacity-50 backdrop-blur-sm text-white font-semibold rounded-xl border-2 border-blue-600 hover:border-yellow-400 hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
               >
                 Learn More
